@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 20, 30);
+}
+
+body::-webkit-scrollbar{
+    background: rgb(16, 20, 30);
+    width: 12px;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(29, 39, 63);
+    border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+@import './style-components/card'
