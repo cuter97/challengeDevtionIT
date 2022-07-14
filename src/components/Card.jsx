@@ -8,9 +8,11 @@ const Card = ({ props }) => {
 
     return (
         <Link to={`/movie/${id}`} className="card card-content" style={{ width: '18rem' }}>
-            <img className="card-img-top" src={uri} alt='poster-movie' />
-            <div className="card-body">
-                <p className="card-title font-title">{title}</p>
+            <div className="effect">
+                <img className="card-img-top card-img" src={uri} alt='poster-movie' />
+            </div>
+            <div className="card-body info-body">
+                <p className="font-title">{title}</p>
             </div>
         </Link>
     )

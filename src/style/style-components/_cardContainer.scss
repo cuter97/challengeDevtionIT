@@ -1,0 +1,15 @@
+.cards-container{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    .titulo{
+        font-family: 'Outfit', sans-serif;
+        font-weight: bold;
+        font-size: 42px;
+        letter-spacing: -0.5px;
+        text-align: center;
+        color: #fff;
+        padding-top: 2rem;
+    }    
+}

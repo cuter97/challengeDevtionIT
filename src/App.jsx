@@ -1,24 +1,37 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CardDetail from './components/CardDetail';
 import { useSearch } from './hooks/useSearch';
+import { useDispatch, useSelector } from "react-redux";
+import { getData } from "./redux/actions/DataActions";
+
 import Home from './routes/Home';
+import CardDetail from './components/CardDetail';
+import Loading from "./components/Loading";
+import Navbar from "./components/Navbar";
+
 
 const App = () => {
 
-    const { search, handleChange } = useSearch()
+    const { search, handleChange, setSearch } = useSearch()
+    const dispatch = useDispatch();
+    const loading = useSelector(store => store.data.loading)
+    const [load, setLoad] = useState(false)
 
-    // console.log(search)
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(getData())
+            setLoad(true)
+        }, 2000)
+    }, [dispatch])
+    
+    if (load == false || loading)
+        return <Loading />
+
     return (
         <BrowserRouter>
-            <div>
-                <input
-                    type="text"
-                    placeholder='Search movie'
-                    onChange={handleChange}
-                />
-            </div>
+            <Navbar handleChange={handleChange} setSearch={setSearch} search={search} />
             <Routes>
-                <Route path='/' element={<Home search={search}/>} />
+                <Route path='/' element={<Home search={search} />} />
                 <Route path='/movie/:id' element={<CardDetail />} />
             </Routes>
         </BrowserRouter>

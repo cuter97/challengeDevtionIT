@@ -1,22 +1,22 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getData } from "../redux/actions/DataActions";
-
+import { useSelector } from "react-redux";
 import CardContainer from "../components/CardContainer";
+import NoSearch from "../components/NoSearch";
 import SearchContainer from "../components/SearchContainer";
 
 const Home = ({search}) => {
 
-    const dispatch = useDispatch();
+    const info = useSelector(store => store.search.arrayBusqueda)
 
-    useEffect(() => {
-        dispatch(getData())
-    }, [dispatch])
-    
     return (
         <>
             {
-                (search === '') ? (<CardContainer />) : (<SearchContainer />)
+                (search !== '' && info.length === 0) 
+                    ? 
+                    <NoSearch />
+                    :
+                    (
+                        (search === '') ? (<CardContainer />) : (<SearchContainer />)
+                    )
             }
         </>
     )

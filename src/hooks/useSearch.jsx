@@ -9,12 +9,18 @@ export const useSearch = () => {
 
     const handleChange = (e) => {
         setSearch(e.target.value)
-        if (e.target.value !== '') 
+        if (e.target.value !== '')
             dispatch(getSearch(e.target.value))
     }
+
+    // const handleClick = () => {
+    //     setSearch('')
+    //     console.log('diste click')
+    // }
 
     return {
         search,
         handleChange,
+        setSearch,
     }
 }

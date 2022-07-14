@@ -12,7 +12,7 @@ const CardContainer = () => {
 
     return (
         <div className='cards-container row'>
-            <h1 className='titulo'>Peliculas Populares</h1>
+            <h1 className='titulo'>Popular Movies</h1>
              {
                 popular.map(item => (
                     <Card key={item.id} props={item} />
