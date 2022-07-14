@@ -11,6 +11,8 @@ const Navbar = ({ handleChange, search, setSearch }) => {
             <nav className="navbar" >
                 <div className="container nav-container">
                     {
+                        //si esta en la ruta del home y se busco algo, para ir para atras limpio el input
+                        // si esta en otra ruta simplemete retorno al home
                         (location.pathname === '/')
                             ?
                             (

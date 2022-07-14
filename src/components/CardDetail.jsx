@@ -15,10 +15,12 @@ const CardDetail = () => {
 
     const img = `https://image.tmdb.org/t/p/original${info.poster_path}`
 
+    //hago el dispatch para traerme la información de la api
     useEffect(() => {
         dispatch(getInfoId(id))
     }, [id, dispatch])
 
+    //si la información esta cargando retorno la pantalla de carga
     if (loadInfo)
         return <Loading />
 

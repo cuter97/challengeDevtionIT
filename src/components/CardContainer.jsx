@@ -4,6 +4,7 @@ import Card from './Card'
 
 const CardContainer = () => {
 
+    //traigo la data y ordeno por popularidad
     const data = useSelector(store => store.data.array)
 
     const popular = useMemo(() => {

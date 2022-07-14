@@ -3,6 +3,7 @@ import Card from "./Card"
 
 const SearchContainer = () => {
 
+    //traigo las peliculas buscadas
     const dataSearch = useSelector(store => store.search.arrayBusqueda)
 
     return (

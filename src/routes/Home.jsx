@@ -10,11 +10,12 @@ const Home = ({search}) => {
     return (
         <>
             {
-                (search !== '' && info.length === 0) 
+                (search !== '' && info.length === 0)  //verifico que haya información para mostrar
                     ? 
                     <NoSearch />
                     :
                     (
+                        //si el input esta vacio mustro las peluculas populares
                         (search === '') ? (<CardContainer />) : (<SearchContainer />)
                     )
             }
